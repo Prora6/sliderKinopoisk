@@ -1,0 +1,344 @@
+@import "./variables.scss";
+@import "../fonts/fonts.scss";
+@import "./mixins";
+
+.prompts {
+  width: 100%;
+  height: 100vh;
+  background-image: url('~@/assets/pictures/Sky.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 24px 30px 30px 27px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  &__carousel-img {
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 303.13px;
+    height: 436px;
+  }
+  &__character {
+    width: 300px;
+  }
+  &__cloud{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url('~@/assets/pictures/Clouds.png') no-repeat center / cover;
+  }
+  &__carousel-text{
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -72%);
+    width: 902px;
+  }
+  &__prev-slider {
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 285px;
+    background: transparent;
+    display: flex;
+    padding: 18px 12px;
+    border-radius: 50px;
+    border: 1px solid $light-black;
+    transform: rotate(180deg);
+  }
+  &__next-slider {
+    z-index: 3;
+    position: absolute;
+    top: 52%;
+    right: 285px;
+
+    background: transparent;
+    display: flex;
+    padding: 18px 12px;
+    border-radius: 50px;
+    border: 1px solid $light-black;
+  }
+
+  &__interaction {
+    position: relative;
+    z-index: 1;
+  }
+  &__navigation {
+    position: absolute;
+    @include flex-column;
+  }
+  &__button-scroll {
+    writing-mode: tb-rl;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 66px;
+    left: -62px;
+  }
+  &__content {
+    position: relative;
+    @include flex-column;
+    justify-content: space-between;
+  }
+  &__title {
+    @include flex-column;
+    align-items: center;
+  }
+  &__counter {
+    display: inline-block;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 19.5px 16px 16.5px 16px;
+    font-weight: 600;
+    @include semi-medium-size-font;
+    color: $black;
+  }
+  &__content-image {
+    position: absolute;
+    bottom: 15px;
+  }
+  &__content-scroll {
+    position: absolute;
+    top: 50%;
+    max-width: 902px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__description {
+    @include flex-column;
+    align-items: center;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50.56px;
+    padding: 19.33px 31.79px 18.93px 13.42px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 26px rgba(11, 75, 92, 0.0975713);
+    border-radius: 8px;
+  }
+  &__link {
+    @include medium-size-font;
+    color: $light-black;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: rotate(90deg);
+    will-change: transform;
+  }
+}
+.menu {
+  padding-top: 14px;
+  margin-bottom: 162px;
+}
+.navigation {
+  &__item {
+    margin-bottom: 50px;
+    position: relative;
+
+    &_empty {
+      width: 8px;
+      border: 1px solid $light-black;
+      background: $light-black;
+    }
+  }
+  &__item:nth-child(2){
+    margin-bottom: 29px;
+  }
+  &__item:last-child{
+    width: 8px;
+    border: 1px solid $light-black;
+    margin-bottom: 0px;
+  }
+  &__line {
+    border: 1px solid $light-black;
+    width: 116px;
+  }
+  &__title {
+    max-width: 116px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text {
+    font-weight: 400;
+    @include medium-size-font;
+    color: $light-black;
+    margin-bottom: 7px;
+  }
+}
+.title{
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 72px;
+  letter-spacing: -0.692308px;
+  text-transform: uppercase;
+  color: #FFCC64;
+  &_content {
+    margin-bottom: 34.77px;
+  }
+}
+.number {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 15px;
+  color: $light-black;
+}
+.arrow {
+  &_scroll {
+    display: flex;
+    writing-mode: tb-rl;
+    transform: rotate(90deg);
+    padding-right: 49px;
+  }
+  &_promo {
+    display: flex;
+  }
+}
+.button {
+  background: transparent;
+  border: none;
+  font-weight: 300;
+  color: $light-black;
+  &_scroll {
+    @include medium-size-font;
+    display: flex;
+    padding-left: 30px;
+    align-items: baseline;
+    font-weight: 400;
+  }
+  &_promo {
+    @include semi-medium-size-font;
+  }
+}
+.logo {
+  display: flex;
+  margin-bottom: 23.91px;
+}
+.link {
+  text-decoration:none;
+}
+.text {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.4px;
+  color: $black;
+  text-align: center;
+}
+
+@media screen and (max-width: 1250px) {
+  .prompts {
+    &__cloud{
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: url('~@/assets/pictures/Clouds.png') no-repeat center / cover;
+    }
+    &__carousel-text{
+      position: absolute;
+      top: 76%;
+      left: 50%;
+      width: 552px;
+    }
+    &__prev-slider {
+      @include button-arrow;
+      left: 247px;
+      transform: rotate(180deg);
+    }
+    &__next-slider {
+      @include  button-arrow;
+      right: 247px;
+    }
+    &__button-scroll {
+      bottom: 53px;
+      left: -53px;
+    }
+    &__counter {
+      font-size: 14px;
+      line-height: 15px;
+      padding: 14px 12px;
+    }
+    &__content-scroll {
+      top: 46%;
+    }
+    &__button {
+      margin-bottom: 0;
+      padding: 12px;
+    }
+  }
+  .menu {
+    margin-bottom: 60px;
+  }
+  .navigation {
+    &__line {
+      width: 102px;
+    }
+  }
+  .title{
+    font-size: 36px;
+    line-height: 39px;
+    &_content {
+      margin-bottom: 26px;
+    }
+  }
+  .circle-button {
+    padding: 10px 4px;
+    &_previous {}
+  }
+  .button {
+    &_scroll {
+      padding-left: 10px;
+    }
+  }
+  .logo {
+    max-width: 135px;
+  }
+  .text {
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.2px;
+    max-width: 552px;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .prompts {
+    &__prev-slider {
+      padding: 12px 6px;
+      left: 235px;
+    }
+    &__next-slider {
+      padding: 12px 6px;
+      right: 235px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .prompts {
+    &__carousel-img {
+      top: 82%;
+      width: 200px;
+    }
+    &__character {
+      width: 200px;
+    }
+    &__prev-slider {
+      padding: 12px 6px;
+      left: 235px;
+    }
+    &__next-slider {
+      padding: 12px 6px;
+      right: 235px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@mixin medium-size-font{
+  font-size: 14px;
+  line-height: 15px;
+}
+
+@mixin semi-medium-size-font{
+  font-size: 15px;
+  line-height: 18px;
+}
+
+@mixin flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin button-arrow {
+  position: absolute;
+  top: 55%;
+  background: transparent;
+  padding: 18px 12px;
+  border-radius: 50px;
+  border: 1px solid $light-black;
+}
